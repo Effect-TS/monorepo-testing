@@ -1,0 +1,47 @@
+{
+  "name": "effect",
+  "type": "module",
+  "version": "2.0.0-next.49",
+  "license": "MIT",
+  "author": "Michael Arnaldi <ma@matechs.com>",
+  "description": "Functional programming in TypeScript",
+  "homepage": "https://github.com/Effect-TS/effect",
+  "bugs": {
+    "url": "https://github.com/Effect-TS/effect/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "tags": [
+    "typescript",
+    "algebraic-data-types",
+    "functional-programming"
+  ],
+  "keywords": [
+    "typescript",
+    "algebraic-data-types",
+    "functional-programming"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "pnpm run build:cjs && pnpm run build:esm && pnpm run build:proxy",
+    "build:cjs": "tsc --project tsconfig.json --module commonjs --outDir ./dist/cjs --declaration --declarationDir ./dist/cjs && echo >./dist/cjs/package.json '{\"type\":\"commonjs\"}'",
+    "build:esm": "tsc --project tsconfig.json --module ES6 --verbatimModuleSyntax --outDir ./dist/esm --declaration --declarationDir ./dist/esm",
+    "build:proxy": "node ../../scripts/gen-esm-proxy.mjs ./src"
+  },
+  "exports": {
+    ".": {
+      "module": "./dist/esm/src/index.js",
+      "require": "./dist/cjs/src/index.js",
+      "import": "./dist/proxy/src/index.js"
+    },
+    "./*": {
+      "module": "./dist/esm/src/*.js",
+      "require": "./dist/cjs/src/*.js",
+      "import": "./dist/proxy/src/*.js"
+    }
+  },
+  "files": [
+    "dist/**"
+  ]
+}

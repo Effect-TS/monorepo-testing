@@ -54,6 +54,9 @@
       "effect/*": [
         "./packages/effect/src/*.ts"
       ],
+      "effect-test/*": [
+        "./packages/effect/test/*.ts"
+      ],
     },
   }
 }

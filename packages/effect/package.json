@@ -43,5 +43,8 @@
   },
   "files": [
     "dist/**"
-  ]
+  ],
+  "devDependencies": {
+    "fast-check": "^3.13.1"
+  }
 }

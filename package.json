@@ -5,11 +5,23 @@
     "packages/*"
   ],
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "lint": "pnpm run -r lint",
+    "lint:fix": "pnpm run -r lint:fix"
   },
   "packageManager": "pnpm@8.7.3",
   "devDependencies": {
+    "@effect/eslint-plugin": "^0.1.2",
     "@types/node": "^20.8.7",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "eslint": "^8.52.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-codegen": "^0.17.0",
+    "eslint-plugin-deprecation": "^2.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-sort-destructure-keys": "^1.5.0",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
     "vitest": "^0.34.6"

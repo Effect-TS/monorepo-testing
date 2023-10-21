@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [
+    ".eslintrc.cjs",
+    "vitest.workspace.ts",
+    "scripts/*.mjs",
+    "packages/*/vitest.config.ts",
+    "packages/*/src",
+    "packages/*/test",
+    "packages/*/examples"
+  ]
+}

@@ -1,9 +1,12 @@
 /* eslint-disable no-undef */
 module.exports = {
-  ignorePatterns: ["build", "dist", "*.mjs", "docs", "*.md"],
+  root: true,
+  ignorePatterns: ["build", "dist", "docs", "*.md"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaVersion: 2018,
+    tsconfigRootDir: __dirname,
+    project: "tsconfig.eslint.json",
+    ecmaVersion: "latest",
     sourceType: "module"
   },
   settings: {

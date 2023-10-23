@@ -6,7 +6,7 @@
   "include": [
     ".eslintrc.cjs",
     "vitest.workspace.ts",
-    "scripts/*.mjs",
+    "scripts",
     "packages/*/vitest.config.ts",
     "packages/*/src",
     "packages/*/test",

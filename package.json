@@ -5,6 +5,7 @@
     "packages/*"
   ],
   "scripts": {
+    "build": "tsc --build",
     "test": "vitest",
     "lint": "pnpm run -r lint",
     "lint:fix": "pnpm run -r lint:fix"

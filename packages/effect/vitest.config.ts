@@ -1,6 +1,6 @@
-import { defineProject } from "vitest/config"
-
+/// <reference types="vitest" />
 import path from "node:path"
+import { defineProject } from "vitest/config"
 
 export default defineProject({
   test: {

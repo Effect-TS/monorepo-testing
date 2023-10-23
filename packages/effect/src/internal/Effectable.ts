@@ -49,7 +49,7 @@ export const channelVariance = {
 }
 
 /** @internal */
-export const EffectPrototype: Effect.Effect<never, never, never> = {
+export const EffectPrototype = {
   [EffectTypeId]: effectVariance,
   [StreamTypeId]: effectVariance,
   [SinkTypeId]: sinkVariance,

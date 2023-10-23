@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineWorkspace } from "vitest/config"
 
 // defineWorkspace provides a nice type hinting DX

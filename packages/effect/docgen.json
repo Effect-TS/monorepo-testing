@@ -1,0 +1,6 @@
+{
+    "$schema": "https://raw.githubusercontent.com/effect-ts/docgen/main/schema.json",
+    "exclude": [
+        "src/internal/**/*.ts"
+    ]
+}

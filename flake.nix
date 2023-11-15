@@ -25,13 +25,15 @@
       formatter = pkgs.alejandra;
 
       devShells = {
-        default = pkgs.mkShell {
-          buildInputs = with pkgs; [
-            bun
-            nodejs_20
-            corepackEnable
-          ];
-        };
+        default = with pkgs;
+          mkShell {
+            buildInputs = [
+              corepackEnable
+              bun
+              deno
+              nodejs_20
+            ];
+          };
       };
     });
 }

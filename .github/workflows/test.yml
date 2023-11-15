@@ -16,64 +16,49 @@ jobs:
     name: Node
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    strategy:
-      fail-fast: false
-
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
         uses: ./.github/actions/setup
-      - run: pnpm vitest
+      - run: pnpm vitest --project effect
 
   edge:
     name: Edge
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
         uses: ./.github/actions/setup
-      - run: pnpm vitest --environment edge-runtime
+      - run: pnpm vitest --project effect:edge
 
   browser:
-    name: Browser (${{ matrix.browser }})
+    name: Browser (${{ matrix.shard }})
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        browser: [chromium]
-
+        shard: [1/3, 2/3, 3/3]
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
         uses: ./.github/actions/setup
-      - name: Install dependencies
-        uses: ./.github/actions/setup
-      - run: npx playwright install --with-deps ${{ matrix.browser }}
-      - run: pnpm vitest --browser ${{ matrix.browser }}
+      - run: pnpm playwright install --with-deps chromium
+      - run: pnpm vitest --shard ${{ matrix.shard }} --project effect:chromium
 
   bun:
     name: Bun
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
         uses: ./.github/actions/setup
       - name: Install bun
         uses: oven-sh/setup-bun@v1
-      - run: bun vitest
+      - run: bun vitest --project effect
 
   deno:
     name: Deno
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies

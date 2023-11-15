@@ -13,7 +13,11 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "moduleResolution": "NodeNext",
-    "lib": ["ES2022", "DOM"],
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "isolatedModules": true,
     "sourceMap": true,
     "declarationMap": true,
@@ -36,11 +40,16 @@
     "incremental": true,
     "removeComments": false,
     "paths": {
-      "effect": ["./src/index.js"],
-      "effect/*": ["./src/*.js"],
-      "effect-test/*": ["./test/*.js"]
+      "effect": [
+        "./packages/effect/src/index.js"
+      ],
+      "effect/*": [
+        "./packages/effect/src/*.js"
+      ],
+      "effect-test/*": [
+        "./packages/effect/test/*.js"
+      ]
     },
-    "types": ["node"],
     "plugins": [
       {
         "name": "@effect/language-service"
